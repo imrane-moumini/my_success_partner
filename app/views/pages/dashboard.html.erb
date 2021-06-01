@@ -1,0 +1,29 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.digischool.fr/images/article/comment-bien-reussir-ses-examens--lg-3927.jpg)">
+  Mon profil
+</div>
+
+<div class="container mb-5">
+  <div class="row my-2">
+    <div class="d-flex justify-content-between my-4">
+      <h2>Mes prestations</h2>
+      <% @services.each do |service| %>
+        <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+          <div class="bg-white rounded shadow h-100">
+            <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://resize.programme-television.ladmedia.fr/r/670,670/img/var/premiere/storage/images/tele-7-jours/news-tv/replay-la-vie-sauvage-france-2-l-incroyable-documentaire-animalier-4318529/77722107-1-fre-FR/REPLAY-La-vie-sauvage-France-2-l-incroyable-documentaire-animalier.jpg)"></div>
+            <strong><%= service.name %> <span class="text-muted font-weight-normal"></span></strong>
+            <div class="p-3 rounded-bottom d-flex flex-column">
+              <p> <%= service.price%>€</p> <i class="fas fa-star star-yellow"></i>
+              <div class="d-flex align-items-end justify-content-between pt-4">
+                <div>
+                <small class="text-right flex-shrink-0"><%= link_to 'update', method: :delete, data: { confirm: "Are you sure you want to remove #{service.name} from your service"}, class: 'text-danger' %></small>
+                <small class="text-right flex-shrink-0"><%= link_to 'delete' %></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
