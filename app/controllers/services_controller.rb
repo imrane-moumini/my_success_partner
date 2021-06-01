@@ -4,3 +4,4 @@ class ServicesController < ApplicationController
     @service.destroy
     redirect_to dashboard_path(@dashboard), notice: 'This service was successfully destroyed.'
   end
+end
