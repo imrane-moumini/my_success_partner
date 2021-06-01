@@ -4,10 +4,3 @@ class ServicesController < ApplicationController
     @service.destroy
     redirect_to dashboard_path(@dashboard), notice: 'This service was successfully destroyed.'
   end
-
-private
-
-  def service_params
-    params.require(:service).permit(:name, :price, :address, :description)
-  end
-end
