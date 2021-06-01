@@ -23,6 +23,21 @@ class ServicesController < ApplicationController
     end
   end
 
+  def edit
+    @service = Service.find(params[:id])
+  end
+
+  def update
+    @service = Service.find(params[:id])
+    if @service.update_attributes(service_params)
+      flash[:success] = "Service updated!"
+      # redirect_to dashboard_path(current_user)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
  def destroy
     @service = Service.find(params[:id])
     @service.destroy
