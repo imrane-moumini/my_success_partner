@@ -1,0 +1,24 @@
+.container {
+  margin-top: 20px;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.avatar_and_heading {
+  display:flex;
+
+}
+
+.avatar_heading{
+  margin-right:20px;
+}
+
+.rating{
+  display:flex;
+}
+
+.center-element{
+  display:flex;
+  justify-content: center;
+}
+
