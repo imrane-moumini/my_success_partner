@@ -29,8 +29,9 @@
   <br>
   <br>
   <div class="center-element">
-    <div class="btn btn-ghost">
-      <%= link_to 'Je réserve', new_service_booking_path(@service) %>
-    </div>
+    <button type='button' class='btn btn-flat' data-toggle='modal'>
+    <%= link_to 'Je réserve', new_service_booking_path(@service), class: 'btn btn-flat'  %>
+    </button>
+
   </div>
 </div>
