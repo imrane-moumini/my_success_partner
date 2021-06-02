@@ -3,7 +3,7 @@ class ServicesController < ApplicationController
   def index
     @services = Service.all
   end
-  
+
   def new
     @service = Service.new()
   end
@@ -11,12 +11,12 @@ class ServicesController < ApplicationController
   def show
     @service = Service.find(params[:id])
   end
-  
+
   def create
     @service = Service.new(service_params)
     @service.user = current_user
 
-    if @service.save
+    if @service.save!
       redirect_to service_path(@service)
     else
       render :new
@@ -32,7 +32,7 @@ class ServicesController < ApplicationController
     if @service.update_attributes(service_params)
       flash[:success] = "Service updated!"
       # redirect_to dashboard_path(current_user)
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render :edit
     end
