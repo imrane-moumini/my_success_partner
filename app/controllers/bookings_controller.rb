@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
 
 
 
- 
+
 # GET    /services/:service_id/bookings/new(.:format)
   def new
     # we need @restaurant in our `simple_form_for`
@@ -25,12 +25,14 @@ class BookingsController < ApplicationController
   end
 #GET    /services/:service_id/bookings/:id/edit
   def edit
-    @booking = Booking.find(params[:service_id])
+    @booking = Booking.find(params[:id])
+    @service = Service.find(params[:service_id])
   end
 #PATCH  /services/:service_id/bookings/:id
   def update
-    @booking = Booking.new(params[:service_id])
-    if @booking.update_attribut(booking_params)
+    @booking = Booking.find(params[:id])
+    @service = Service.find(params[:service_id])
+    if @booking.update_attributes(booking_params)
       redirect_to dashboard_path
       flash[:success] ="The booking has been updated!"
     else
