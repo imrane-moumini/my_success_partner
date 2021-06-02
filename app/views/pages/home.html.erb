@@ -24,60 +24,54 @@
       </li>
     </ul>
 </div>
-<div class = "container text-align-center">
-<div class ="homepage">
-        <div class="filter">
-          <div class="banner">
-              <div class="class1">
-                <div class="row align-self-center">
-                    <form class="form-inline">
-                      <div class="input">
-                        <span class="Drop_down_list" id="liste">Je souhaite passer le </span>
-                        <select name="Examens">
-                          <option value="all">Examen...</option>
-                          <option value="PERMIS B">PERMIS B</option>
-                          <option value="TOEIC">TOEIC</option>
-                          <option value="BAC">BAC</option>
-                        </select>
-                        <span class="Drop_down_list" id="liste">à</span>
-                          <select name="Villes">
-                            <option value="all">Ville...</option>
-                            <option value="Paris">Paris</option>
-                            <option value="Toulouse">Marseille</option>
-                            <option value="Toulouse">Toulouse</option>
-                          </select>
-                        <span class="Drop_down_list" id="liste">le</span>
-                          <select name="Dates">
-                            <option value="all">Date...</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                          </select>
-                         <span class="Drop_down_list" id="liste"></span>
-                          <select name="Mois">
-                            <option value="all">Mois...</option>
-                            <option value="Janvier">Janvier</option>
-                            <option value="Février">Février</option>
-                            <option value="Mars">Mars</option>
-                            <option value="Avril">Avril</option>
-                            <option value="Mai">Mai</option>
-                            <option value="Juin">Juin</option>
-                            <option value="Juillet">Juillet</option>
-                            <option value="Aout">Aout</option>
-                            <option value="Septembre">Septembre</option>
-                            <option value="Octobre">Octobre</option>
-                          </select>
-                      </div>
-                  </form>
-                </div>
-              </div>
-          </div>
-        </div>
+<div class = "container text-center mt-5">
+  <div class="row">
+    <div class="col-1"></div>
+    <form class="form-inline col-10">
+      <div class="input">
+        <span class="Drop_down_list" id="liste">Je souhaite passer le </span>
+        <select name="Examens">
+          <option value="all">Examen...</option>
+          <option value="PERMIS B">PERMIS B</option>
+          <option value="TOEIC">TOEIC</option>
+          <option value="BAC">BAC</option>
+        </select>
+        <span class="Drop_down_list" id="liste">à</span>
+          <select name="Villes">
+            <option value="all">Ville...</option>
+            <option value="Paris">Paris</option>
+            <option value="Toulouse">Marseille</option>
+            <option value="Toulouse">Toulouse</option>
+          </select>
+        <span class="Drop_down_list" id="liste">le</span>
+          <select name="Dates">
+            <option value="all">Date...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+         <span class="Drop_down_list" id="liste"></span>
+          <select name="Mois">
+            <option value="all">Mois...</option>
+            <option value="Janvier">Janvier</option>
+            <option value="Février">Février</option>
+            <option value="Mars">Mars</option>
+            <option value="Avril">Avril</option>
+            <option value="Mai">Mai</option>
+            <option value="Juin">Juin</option>
+            <option value="Juillet">Juillet</option>
+            <option value="Aout">Aout</option>
+            <option value="Septembre">Septembre</option>
+            <option value="Octobre">Octobre</option>
+          </select>
+      </div>
+  </form>
+  <div class="col-1"></div>
+  </div>
+    <button type="button" class="btn btn-flat mt-5" data-toggle="modal">
+      <%= link_to 'Je reserve ma prestation', services_path, class: 'btn btn-flat' %>
+    </button>
 </div>
-</div>
-<button type="button" class="btn btn-flat" data-toggle="modal">
-        <%= link_to 'Je reserve ma prestation', services_path, class: 'btn btn-flat' %>
-</button>
 
 <div class="footer">
 
@@ -91,9 +85,6 @@
   </div>
   <div class="footer-copyright">
     This footer is made with <i class="fas fa-heart"></i> by Selma lol
-  </div>
-
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
   </div>
 </div>
 
