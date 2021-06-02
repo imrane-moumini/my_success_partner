@@ -8,7 +8,7 @@
   </div>
 
   <div class="rating">
-    <h3><%= @service.user %></h3>
+    <h3><%= @service.user.name %></h3>
     <div class="stars">
       <i class="fas fa-star"></i>
       <i class="fas fa-star"></i>
@@ -31,6 +31,9 @@
   <div class="center-element">
     <button type='button' class='btn btn-flat' data-toggle='modal'>
     <%= link_to 'Je réserve', new_service_booking_path(@service), class: 'btn btn-flat'  %>
+    </button>
+    <button type='button' class='btn btn-flat' data-toggle='modal'>
+    <%= link_to 'Retourner aux services', services_path, class: 'btn btn-flat'  %>
     </button>
 
   </div>

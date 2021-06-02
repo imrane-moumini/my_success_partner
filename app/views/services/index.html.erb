@@ -1,13 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 
-
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.digischool.fr/images/article/comment-bien-reussir-ses-examens--lg-3927.jpg)">
+  Choisis ton Success Partner</p>
+</div>
 
 <div class="container my-5">
-  <div class="bg-dark">
-    <h1 class="text-white">TOEIC</h1>
-    <p class="text-white">Choisis ton Success Partner</p>
-  </div>
   <div class="row">
     <% @services.each do |service| %>
       <div class="col-12 col-sm-4 mb-3 border">
@@ -18,7 +16,9 @@
             <p> <%= service.price%>€</p> <i class="fas fa-star star-yellow"></i>
             <div class="d-flex align-items-end justify-content-between pt-4">
               <div>
-              <small class="text-right flex-shrink-0"><%= link_to 'Réserver', service_path, method: :delete, data: { confirm: "Are you sure you want to book this service?"}, class: 'text-danger' %></small>
+                <button type="button" class="btn btn-flat" data-toggle="modal">
+                 <%= link_to 'Réserver', service_path(service.id), class: 'btn btn-flat' %>
+                </button>
               </div>
             </div>
           </div>
@@ -27,5 +27,3 @@
     <% end %>
   </div>
 </div>
-
-<%= link_to 'New Service', new_service_path %>
