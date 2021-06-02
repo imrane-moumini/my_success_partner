@@ -1,2 +1,38 @@
-<h1><%= @service.name %></h1>
-<p> <%= @service.description %></p>
+
+<div class ="container">
+  <div class="avatar_and_heading">
+    <div class="avatar_heading">
+      <%= image_tag( "lama photo.jpeg", alt: "avatar",:class => "avatar-bordered")%>
+    </div>
+    <h1><%= @service.name %></h1>
+  </div>
+
+  <div class="rating">
+    <h3><%= @service.user %></h3>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div>
+    <p> <%= @service.description %></p>
+  </div>
+   <br>
+  <br>
+  <br>
+  <br>
+  <div class="center-element">
+    <button type='button' class='btn btn-flat' data-toggle='modal'>
+    <%= link_to 'Je réserve', new_service_booking_path(@service), class: 'btn btn-flat'  %>
+    </button>
+
+  </div>
+</div>
+
