@@ -1,26 +1,38 @@
-<h1><%= @service.name %></h1>
-<p> <%= @service.description %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Address</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class ="container">
+  <div class="avatar_and_heading">
+    <div class="avatar_heading">
+      <%= image_tag( "lama photo.jpeg", alt: "avatar",:class => "avatar-bordered")%>
+    </div>
+    <h1><%= @service.name %></h1>
+  </div>
 
-  <tbody>
-    <% @services.each do |service| %>
-      <tr>
-        <td><%= service.name %></td>
-        <td><%= service.address %></td>
-        <td><%= link_to 'Show', service %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="rating">
+    <h3><%= @service.user %></h3>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div>
+    <p> <%= @service.description %></p>
+  </div>
+   <br>
+  <br>
+  <br>
+  <br>
+  <div class="center-element">
+    <button type='button' class='btn btn-flat' data-toggle='modal'>
+    <%= link_to 'Je réserve', new_service_booking_path(@service), class: 'btn btn-flat'  %>
+    </button>
 
-<br>
+  </div>
+</div>
+
