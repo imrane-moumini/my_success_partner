@@ -2,12 +2,11 @@
 <div id="hero-search" >
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/87146171481981.5bd810c153a71.gif);">
     <div class="container">
-      <h1><strong> My success partner </strong></h1>
+      <h1>My <strong>success</strong> partner <strong></h1>
       <p>La réussite en 3 clicks</p>
     </div>
-
-  </div>
-<div id="booking" class="section">
+</div>
+    <div id="booking" class="section">
     <div class="section-center">
       <div class="container ">
         <div class="row ">
@@ -48,7 +47,7 @@
                 </div>
                 <div class="col-md-3">
                   <div>
-                    <a class="btn btn-flat" href="#">Rechercher</a>
+                    <%= link_to "Rechercher", services_path, class: "btn btn-flat" %>
                   </div>
                 </div>
               </div>
@@ -58,9 +57,11 @@
       </div>
     </div>
   </div>
+</div>
+
 <!-- Card-Grids -->
 <div class="title" id="top">
-<h1>NOS CATEGORIES</h1>
+<h1>Nos Catégories</h1>
    <div class="content">
       <div class="card">
             <div class="icon"><i class="material-icons md-36"></i></div>
