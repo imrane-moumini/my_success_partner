@@ -5,8 +5,10 @@
   <%= f.input :booking_hour, label: "Heure de l'examen" %>
   <%= f.input :booking_duration,label: "Durée de l'examen (en heure)",input_html: { min: 1 } %>
   <%= f.input :booking_localisation, label: "Lieu de l'examen" %>
-  <%= f.submit 'Je réserve',  class: 'btn btn-flat', data: {confirm: "Merci, votre réservation a bien été effectuée ! Voici un récapitulatif : #{@booking.booking_date} "} %>
+  <%= f.submit 'Je réserve',  class: 'btn-flat', id: 'send', class: "hidden"  %>
     <% end %>
   </div>
+  <button id="sweet-alert" class="btn btn-flat">Je réserve</button>
 </div>
 
+ <!--data: {confirm: "Merci, votre réservation a bien été effectuée !"} -->
