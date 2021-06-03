@@ -2,6 +2,7 @@
     <%= link_to 'Retourner aux services', services_path, class: 'btn btn-flat'  %>
   </button>
 
+
 <div class ="container">
 
   <div class="service_info">
@@ -14,11 +15,22 @@
       <div class="avatar_heading">
         <%=  cl_image_tag( @service.user.photo.key, alt: "avatar",:class => "avatar-bordered") %>
       </div>
+
+   <!-- <button type='button' class='btn btn-flat' data-toggle='modal'>-->
+    <%= link_to 'Retourner aux services', services_path, class: 'btn btn-flat'  %>
+    <!--</button>-->
+
+<div id ="container">
+  <div class="barre_de_gauche">
+    <div class="avatar_and_heading">
+
       <h1><%= @service.name %></h1>
     </div>
 
     <div class="rating">
+
       <h3><%= @service.user.name %></h3>
+
       <div class="stars">
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
@@ -28,6 +40,7 @@
     </div>
     <br>
     <br>
+
     <br>
     <br>
     <br>
@@ -56,6 +69,4 @@
     </div>
 
   <div>
-
-</div>
 

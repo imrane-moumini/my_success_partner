@@ -1,6 +1,8 @@
 <%= simple_form_for([@service, @booking]) do |f| %>
-  <%= f.input :booking_date%>
-  <%= f.input :rating %>
-  <%= f.input :status %>
-  <%= f.submit %>
-<% end %>
+  <%= f.input :booking_date, label: "Date de l'examen", as: :string, input_html:  {class: "datepicker"} %>
+  <%= f.input :booking_hour, label: "Heure de l'examen" %>
+  <%= f.input :booking_duration,label: "Durée de l'examen",input_html: { min: 1 } %>
+  <%= f.input :booking_localisation, label: "Lieu de l'examen" %>
+  <%= f.submit 'Je réserve',  class: 'btn btn-flat' %>
+    <% end %>
+  </div>
