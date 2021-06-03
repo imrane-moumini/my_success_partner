@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+<%= simple_form_for([@service, @booking]) do |f| %>
+  <%= f.input :booking_date, label: "Date de l'examen", as: :string, input_html:  {class: "datepicker"} %>
+  <%= f.input :booking_hour, label: "Heure de l'examen" %>
+  <%= f.input :booking_duration,label: "Durée de l'examen (en heure)",input_html: { min: 1 } %>
+  <%= f.input :booking_localisation, label: "Lieu de l'examen" %>
+  <%= f.submit 'Je réserve',  class: 'btn btn-flat', data: {confirm: "Merci, votre réservation a bien été effectuée ! Voici un récapitulatif : #{@booking.booking_date} "} %>
+    <% end %>
+  </div>
+</div>
+
