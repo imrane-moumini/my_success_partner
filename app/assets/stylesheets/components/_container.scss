@@ -1,7 +1,8 @@
 .container {
-  margin-top: 20px;
-  width: 1000px;
-  margin: 0 auto;
+ display:flex;
+}
+.service_info {
+  flex-grow:1;
 }
 
 .avatar_and_heading {
