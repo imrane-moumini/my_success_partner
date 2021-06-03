@@ -125,7 +125,7 @@ J'ai aussi fait un parcours littéraire mais beaucoup plus par expérience.
 J'ai beaucoup d'expérience en rédaction technique et en édition et je suis en écriture créative depuis que je pouvais tenir un stylo. Je suis un éditeur très minutieux et je vous rendrai un document soigné, professionnel et parfaitement édité, sur n'importe quel sujet.
 J'ai une équipe avec moi pour vous satisfaire.")
 
-file = URI.open("https://www.polymtl.ca/carrefour-actualite/sites/carrefour-actualite-2.amigow2020.polymtl.ca/files/mathematiques_1200x620.png")
+file = URI.open("https://www.rts.ch/2020/08/11/16/11/9081328.image?w=1920&h=598")
 service.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 service.save
 

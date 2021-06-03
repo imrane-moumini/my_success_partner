@@ -14,7 +14,7 @@
     <% @services.each do |service| %>
       <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
         <div class="bg-white rounded shadow h-100">
-          <img src="https://www.francetvinfo.fr/image/75wj5xfs2-97ce/580/326/23486965.jpg" alt="" class= 'card-img rounded-top'>
+          <%= cl_image_tag service.photo.key,  class: 'card-img rounded-top' %>
           <div class="p-3 rounded-bottom d-flex flex-column">
             <strong><%= service.name %> <span class="text-muted font-weight-normal">• <%= service.user.name %> <i class="fas fa-star star-yellow"></i></span></strong>
             <small class="text-muted"><%= service.price %></small>
