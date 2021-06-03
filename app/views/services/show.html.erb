@@ -1,8 +1,11 @@
 
 <div class ="container">
+  <% if @service.photo.attached? %>
+    <%= cl_image_tag @service.photo.key, height: 300, width: 1000, crop: :fill %>
+    <% end%>
   <div class="avatar_and_heading">
     <div class="avatar_heading">
-      <%= image_tag( "lama_photo.jpeg", alt: "avatar",:class => "avatar-bordered")%>
+      <%=  cl_image_tag( @service.user.photo.key, alt: "avatar",:class => "avatar-bordered") %>
     </div>
     <h1><%= @service.name %></h1>
   </div>
