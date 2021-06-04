@@ -9,3 +9,18 @@ button{
   padding: 30px 10px;
   text-align: left;
 }
+
+.nav-link{
+  color: #FF0063;
+  padding: 10px;
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: #FF0063;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #FF0063;
+}
+

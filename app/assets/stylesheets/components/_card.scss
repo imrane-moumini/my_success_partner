@@ -18,7 +18,87 @@
     position: relative;
     .action-buttons-card {
       position:absolute;
-      top: 40px;
+      top: 0px;
       right: 10px;
+      color: white;
     }
 }
+
+.fa-trash-alt:before {
+    content: "\f2ed";
+    color: white;
+}
+
+.fa-pen:before {
+    content: "\f304";
+    color: white;
+}
+
+b, strong {
+    font-weight: bolder;
+    color: #292929;
+}
+
+.fa-star:before {
+    content: "\f005";
+    color: #FF0063;
+}
+
+
+.card-infos{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 20px;
+  .card-trip-pricing {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+.card-link-service h2 {
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  color: #292929;
+  text-decoration: none;
+  width: 330px;
+}
+
+.card-link-service p {
+  font-family: Poppins;
+  font-size: 16px;
+  opacity: .7;
+  margin: 0;
+  color: #292929;
+}
+
+.card-link-service a {
+  text-decoration: none;
+}
+
+.btn-flat {
+  color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: #FF0063;
+    display: inline-block;
+    transition: background 0.3s ease;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.card-img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
