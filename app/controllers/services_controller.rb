@@ -1,6 +1,11 @@
 class ServicesController < ApplicationController
 
   def index
+    if params[:query].present? && params[:query2].present?
+      @services = Service.search_by_address(params[:query]).search_by_name(params[:query2])
+    else
+     @services = Service.all
+
     @services = Service.all
       @markers = @services.geocoded.map do |service|
       {

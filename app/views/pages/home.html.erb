@@ -11,47 +11,18 @@
       <div class="container ">
         <div class="row ">
           <div class="booking-form">
-            <form>
-              <div class="row no-margin">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <span class="form-label">Ville</span>
-                    <select class="form-control">
-                      <option>Paris</option>
-                      <option>Marseille</option>
-                      <option>Toulouse</option>
-                    </select>
-                    <span class="select-arrow"></span>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="row no-margin">
-                    <div class="col-md-8">
-                      <div class="form-group">
-                        <span class="form-label">Date</span>
-                        <input class="form-control" type="date" required>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <span class="form-label">Examen</span>
-                        <select class="form-control">
-                          <option>BAC</option>
-                          <option>TOEIC</option>
-                          <option>PERMIS</option>
-                        </select>
-                        <span class="select-arrow"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div>
-                    <%= link_to "Rechercher", services_path, class: "btn btn-flat" %>
-                  </div>
-                </div>
-              </div>
-            </form>
+            <%= form_tag services_path, method: :get do %>
+              <%= text_field_tag :query,params[:query],
+              class: "form-group",
+              placeholder: "Ma ville" %>
+               <%= text_field_tag :query2,params[:query2],
+              class: "form-group",
+              placeholder: "Examen" %>
+               <%= date_field_tag :query3,params[:query3],
+              class: "form-group",
+              placeholder: "Date" %>
+              <%= submit_tag "Rechercher", class: "btn btn-flat" %>
+            <% end %>
           </div>
         </div>
       </div>
