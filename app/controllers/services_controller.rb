@@ -8,12 +8,14 @@ class ServicesController < ApplicationController
 
       @services = Service.all
       @markers = @services.geocoded.map do |service|
-        {
-          lat: service.latitude,
-          lng: service.longitude,
-          info_window: render_to_string(partial: "info_window", locals: { service: service }),
-          image_url: "https://freepikpsd.com/media/2019/10/map-point-png-5-Transparent-Images.png"
-        }
+
+      {
+        lat: service.latitude,
+        lng: service.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { service: service }),
+        image_url: "https://freepikpsd.com/media/2019/10/map-point-png-5-Transparent-Images.png"
+      }
+
       end
     end
   end
