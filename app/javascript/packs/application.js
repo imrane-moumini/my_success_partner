@@ -24,8 +24,15 @@ require("channels")
 
 // External imports
 import "bootstrap";
+
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+import { initFlatpickr } from "../plugins/flatpickr";
+
 
 
 // Internal imports, e.g:
@@ -36,4 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
   // initSelect2();
+  initFlatpickr()
+  AOS.init();
 });
+

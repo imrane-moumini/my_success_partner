@@ -1,4 +1,4 @@
-.container {
+.containerM {
   margin-top: 20px;
   width: 1000px;
   margin: 0 auto;
@@ -11,7 +11,7 @@
 }
 
 .avatar_heading{
-  margin-right:20px;
+  display:flex;
 }
 
 .rating{
@@ -21,4 +21,38 @@
 .center-element{
   display:flex;
   justify-content: center;
+}
+
+
+.barre_de_droite{
+
+
+}
+
+
+.barre_de_gauche{
+
+  border-radius:4px;
+  box-shadow: 10px 5px 5px #F4F4F4;
+  background-color: white;
+  padding: 20px;
+  margin-right:30px;
+}
+
+.booking{
+ border-radius:4px;
+  box-shadow: 10px 5px 5px #F4F4F4;
+  background-color: white;
+  padding: 20px;
+}
+
+.user_description{
+ border-radius:4px;
+  box-shadow: 10px 5px 5px #F4F4F4;
+  background-color: white;
+  padding: 20px;
+}
+
+.user_description_small{
+  background-color:#F4F4F4;
 }

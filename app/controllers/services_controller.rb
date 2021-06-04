@@ -18,6 +18,7 @@ class ServicesController < ApplicationController
 #GET    /services/:id
   def show
     @service = Service.find(params[:id])
+    @booking = Booking.new
   end
 
   def create

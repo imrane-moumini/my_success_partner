@@ -19,76 +19,418 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 100px 0;
-  background-image: src="images/success.jpg"
+  padding: 150px 0;
+  width: 100%;
 }
 
-.banner h1 {
+.container h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 42px;
   font-weight: bold;
 }
 
-.banner p {
+.container p {
   font-size: 20px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-//* Footer *
-.footer {
-  background: #F4F4F4;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
-}
-.footer-links {
-  display: flex;
-  align-items: center;
-}
-.footer-links a {
-  color: black;
-  opacity: 0.15;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
-}
-.footer-links a:hover {
-  opacity: 1;
-}
-.footer .fa-heart {
-  color: #D23333;
-}
-
-//* Navbar *
-.navbar-website {
-  justify-content: space-between;
-  background: white;
-}
-
-.navbar-website .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-website .navbar-brand img {
-  width: 30px;
-}
 
 //* search bar *
 
 .Drop_down_list {
   background-color:none;
-  color: black;
-  padding: 16px;
+  font-family: Poppins;
+  color: #292929;
+  padding: 10px;
   font-size: 16px;
   border: none;
   cursor: pointer;
 }
+.booking-form {
+  background: #fff;
+  border-radius: 6px;
+  margin-top: -30px;
+  margin-left: 190px
+
+}
+
+.booking-form>form .row.no-margin {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.booking-form>form .row.no-margin>[class*="col-"] {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.booking-form .form-group {
+  position: relative;
+  padding: 25px;
+  margin-bottom: 0px;
+}
+
+.booking-form .form-group:after {
+  background: rgba(129, 131, 144, 0.15);
+  position: absolute;
+  top: 25px;
+  bottom: 0;
+  right: 0px;
+  width: 2px;
+  height: 75px;
+}
+
+.booking-form .form-control {
+  background-color: transparent;
+  border-radius: 0px;
+  border: none;
+  height: 50px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-size: 20px;
+  color: #292929;
+  font-weight: 400;
+  padding: 0;
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+  color: #818390;
+}
+
+.booking-form .form-control:-ms-input-placeholder {
+  color: #292929;
+}
+
+.booking-form .form-control::placeholder {
+  color: #292929;
+}
+
+.booking-form input[type="date"].form-control:invalid {
+  color: #292929;
+}
+
+.booking-form select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.booking-form select.form-control+.select-arrow {
+  position: absolute;
+  right: 0px;
+  bottom: 30px;
+  width: 32px;
+  line-height: 32px;
+  height: 32px;
+  text-align: center;
+  pointer-events: none;
+  color: #818390;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.booking-form .btn-flat {
+ color: white;
+  padding: 13px 24px;
+  border-radius: 10px;
+  background: #ff2e6e;
+  transition: background 0.3s ease;
+  margin-top: 40px;
+  margin-left: 15px;
+}
+body {
+  font-family: "Poppins";
+  background-color: #F4F4F4;
+  height: 200vh;
+  position: relative; }
+  body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1; }
+  body.offcanvas-menu:before {
+    opacity: 1;
+    visibility: visible; }
+
+.footer-59391 {
+  border-top: 1px solid #efefef;
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+  padding: 4rem 0; }
+  .footer-59391 .site-logo {
+    color: #fff; }
+    .footer-59391 .site-logo a {
+      font-size: 30px;
+      color: #000;
+      font-weight: 900; }
+  .footer-59391 .social-icons li {
+    display: inline-block; }
+    .footer-59391 .social-icons li a {
+      display: inline-block;
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%; }
+      .footer-59391 .social-icons li a.dr {
+        background: #ff2e6e; }
+      .footer-59391 .social-icons li a.be {
+        background: #394cff; }
+      .footer-59391 .social-icons li a.tw {
+        background: #00a0fb; }
+      .footer-59391 .social-icons li a.in {
+        background: #c31574; }
+      .footer-59391 .social-icons li a.fb {
+        background: #3b579b; }
+      .footer-59391 .social-icons li a.yt {
+        background: #fa2614; }
+      .footer-59391 .social-icons li a span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        color: #fff; }
+  .footer-59391 .nav-links li {
+    display: inline-block; }
+    .footer-59391 .nav-links li a {
+      font-size: 14px;
+      color: #777;
+      padding: 10px; }
+  @media (max-width: 1199.98px) {
+    .footer-59391 .nav-links.nav-left li:first-child a {
+      padding-left: 0; } }
+  .footer-59391 .nav-links.nav-right li:last-child a {
+    padding-right: 0; }
+  @media (max-width: 1199.98px) {
+    .footer-59391 .nav-links.nav-right li:first-child a {
+      padding-left: 0; } }
+  .footer-59391 .copyright {
+    border-top: 1px solid #efefef;
+    padding-top: 50px;
+    text-align: center;
+    color: #777; }
+
+ody {
+   width: 100vw;
+   background-color: #1D1D1D;
+   margin: 0;
+   font-family: helvetica;
+}
+
+.about {
+   $cubic: cubic-bezier(0.64, 0.01, 0.07, 1.65);
+   $transition: 0.6s $cubic;
+   $size: 40px;
+   position: fixed;
+   z-index: 10;
+   bottom: 10px;
+   right: 10px;
+   width: $size;
+   height: $size;
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-end;
+   transition: all 0.2s ease;
+
+.logo {
+  width: $size;
+  height: $size;
+  z-index: 9;
+  background-image: url(https://rafaelalucas91.github.io/assets/codepen/logo_white.svg);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: 10px 7px;
+  opacity: 0.9;
+  transition: all 1s 0.2s ease;
+  bottom: 0;
+  right: 0;
+}
+
+   &:hover {
+      width: 105px;
+      height: 105px;
+      transition: all $transition;
+
+      .logo {
+         opacity: 1;
+         transition: all 0.6s ease;
+      }
+
+      .social {
+         opacity: 1;
+
+         .icon {
+            opacity: 0.9;
+         }
+
+         &:hover {
+            background-size: 28px;
+            .icon {
+               background-size: 65%;
+               opacity: 1;
+            }
+         }
+
+         &.portfolio {
+            right: 0;
+            bottom: calc(100% - 40px);
+            transition: all 0.3s 0s $cubic;
+            .icon {
+               &:hover {
+                  background-color: #698fb7;
+               }
+            }
+         }
+
+         &.dribbble {
+            bottom: 45%;
+            right: 45%;
+            transition: all 0.3s 0.15s $cubic;
+            .icon {
+               &:hover {
+                  background-color: #ea4c89;
+               }
+            }
+         }
+
+         &.linkedin {
+            bottom: 0;
+            right: calc(100% - 40px);
+            transition: all 0.3s 0.25s $cubic;
+            .icon {
+               &:hover {
+                  background-color: #0077b5;
+               }
+            }
+         }
+      }
+   }
+}
+
+.content {
+   width: 100%;
+   padding: 0 4%;
+   padding-top: 25px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 50px;
+}
+
+.card {
+   width: 100%;
+   max-width: 300px;
+   min-width: 150px;
+   height: 200px;
+   background-color: #292929;
+   margin: 10px;
+   border-radius: 10px;
+   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+   border: 2px solid rgba(7, 7, 7, 0.12);
+   font-size: 16px;
+   position: relative;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+
+.icon {
+   margin: 0 auto;
+   width: 100%;
+   height: 80px;
+   max-width:80px;
+   background: linear-gradient(90deg, #ff0063 0%, #FF4848 40%, rgba(0, 0, 0, 0.28) 60%);
+   border-radius: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   transition: all 0.8s ease;
+   background-position: 0px;
+   background-size: 200px;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+.card .title {
+   width: 100%;
+   margin: 0;
+   text-align: center;
+   margin-top: 30px;
+   color: white;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 4px;
+}
+
+.card .text {
+   width: 80%;
+   margin: 0 auto;
+   font-size: 13px;
+   text-align: center;
+   margin-top: 20px;
+   color: white;
+   font-weight: 200;
+   letter-spacing: 2px;
+   opacity: 0;
+   max-height:0;
+   transition: all 0.3s ease;
+}
+
+.card:hover {
+   height: 270px;
+}
+
+.card:hover .info {
+   height: 90%;
+}
+
+.card:hover .text {
+   transition: all 0.3s ease;
+   opacity: 1;
+   max-height:40px;
+}
+
+.card:hover .icon {
+   background-position: -120px;
+   transition: all 0.3s ease;
+}
+
+.card:hover .icon i {
+   background: linear-gradient(90deg, #ff0063, #FF4848);
+   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   opacity: 1;
+   transition: all 0.3s ease;
+}
+h1 {
+  color: black;
+  font-size: 40px;
+  font-weight: 900;
+  font-family: 'Poppins';
+  margin-top: 100px;
+  margin-left: 450px;
+}
+
+
 
 
