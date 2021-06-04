@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 
-<div class="container my-4">
-      <div class="d-flex flex-wrap justify-content-between">
+<div class="container my-4 d-flex flex-wrap justify-content-between">
+      <div class="d-flex flex-wrap justify-content-between col-5">
         <% @services.each do |service| %>
           <div class="card-link-service">
             <%= link_to service_path(service.id), class: "w-100" do %>
@@ -17,26 +17,14 @@
                 </div>
               </div>
             <% end  %>
-            <div class="d-flex flex-column justify-content-between pt-4 action-buttons-card">
-              <small class="text-right flex-shrink-0">
-                <%= link_to service_path(service.id), method: :delete, data: { confirm: "Are you sure you want to remove #{service.name} from your service"}, class: 'text-danger'  do%>
-                  <i class="fas fa-trash-alt"></i>
-                  <% end  %>
-                </small>
-                <small class="text-right flex-shrink-0">
-                  <%= link_to edit_service_path(service.id) do%>
-                    <i class="fas fa-pen"></i>
-                  <% end  %>
-                </small>
-            </div>
           </div>
         <% end %>
       </div>
 
-  <div class="col-6">
+  <div class="col-5">
     <div class="item">
       <div id="map"
-           style="width: 100%px; height: 600px;"
+           style="width: 100%; height: 600px;"
            data-markers="<%= @markers.to_json %>"
            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>

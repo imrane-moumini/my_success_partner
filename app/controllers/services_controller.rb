@@ -4,9 +4,8 @@ class ServicesController < ApplicationController
     if params[:query].present? && params[:query2].present?
         @services = Service.search_by_address(params[:query]).search_by_name(params[:query2])
     else
-       @services = Service.all
-
       @services = Service.all
+    end
       @markers = @services.geocoded.map do |service|
 
       {
@@ -17,7 +16,7 @@ class ServicesController < ApplicationController
       }
 
       end
-    end
+
   end
 
   def new
