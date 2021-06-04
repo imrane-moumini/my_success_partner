@@ -1,34 +1,37 @@
 <p id="notice"><%= notice %></p>
 
 
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.digischool.fr/images/article/comment-bien-reussir-ses-examens--lg-3927.jpg)">
-  Choisis ton Success Partner</p>
-</div>
-
 <div class="container my-4">
-  <div class="col-8 stuff">
-      <h4>Les Offres</h4>
-    <% @services.each do |service| %>
-    <br>
-      <div class="col-12 col-sm-6 mb-8" data-aos="zoom-in">
-        <div class="bg-white rounded shadow h-100">
-          <%= cl_image_tag service.photo.key,  class: 'card-img rounded-top' %>
-          <div class="p-3 rounded-bottom d-flex flex-column">
-            <strong><%= service.name %> <span class="text-muted font-weight-normal">•
-              <br>
-              <%= service.user.name %> <i class="fas fa-star star-yellow"></i></span></strong>
-              <br>
-            <small class="text-muted"><%= service.price %></small>
-            <div class="d-flex align-items-end justify-content-between pt-4">
-              <small class="text-right flex-shrink-0"><%= link_to 'Voir plus', service_path(service.id)%></small>
-              <small class="text-right flex-shrink-0"><%= link_to 'Modifier', edit_service_path(service.id)%></small>
-              <small class="text-right flex-shrink-0"><%= link_to 'Supprimer', service_path(service.id), method: :delete, data: { confirm: "Are you sure you want to remove #{service.name} from your service"}, class: 'text-danger' %></small>
+      <div class="d-flex flex-wrap justify-content-between">
+        <% @services.each do |service| %>
+          <div class="card-link-service">
+            <%= link_to service_path(service.id), class: "w-100" do %>
+              <div class="w-100 mb-4" data-aos="zoom-in">
+                <div class="bg-white rounded shadow h-70">
+                  <div class= "card-img rounded-top" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("<%= cl_image_path service.photo.key %>")'></div>
+                  <div class=" card-infos rounded-bottom d-flex flex-column">
+                    <h2><%= service.name.first(60) %><%= "..." if service.name.length > 60 %></h2>
+                    <br class="text-muted font-weight-normal"><p> Créer par <span><%= service.user.name %></span> • <i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i></p>
+                    <small class=" card-trip-pricing text-muted"><%= service.price %> € </small>
+                  </div>
+                </div>
+              </div>
+            <% end  %>
+            <div class="d-flex flex-column justify-content-between pt-4 action-buttons-card">
+              <small class="text-right flex-shrink-0">
+                <%= link_to service_path(service.id), method: :delete, data: { confirm: "Are you sure you want to remove #{service.name} from your service"}, class: 'text-danger'  do%>
+                  <i class="fas fa-trash-alt"></i>
+                  <% end  %>
+                </small>
+                <small class="text-right flex-shrink-0">
+                  <%= link_to edit_service_path(service.id) do%>
+                    <i class="fas fa-pen"></i>
+                  <% end  %>
+                </small>
             </div>
           </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
 
   <div class="col-6">
     <div class="item">

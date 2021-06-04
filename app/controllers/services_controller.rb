@@ -14,6 +14,7 @@ class ServicesController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { service: service }),
         image_url: "https://freepikpsd.com/media/2019/10/map-point-png-5-Transparent-Images.png"
       }
+      end
     end
   end
 
