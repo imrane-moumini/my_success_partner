@@ -40,22 +40,31 @@
 
 
 //* search bar *
-
-.Drop_down_list {
-  background-color:none;
-  font-family: Poppins;
-  color: #292929;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
 .booking-form {
   background: #fff;
   border-radius: 6px;
   margin-top: -30px;
-  margin-left: 190px
 
+}
+
+
+.booking-form form {
+  display: flex;
+  padding: 20px;
+}
+form>input {
+  flex-grow: 1;
+    margin: 5px;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: rgba(0,0,0,0.2);
+    position: relative;
+    padding: 25px;
+    margin-bottom: 0px;
+}
+
+form>input:focus {
+    border-color: #ff2e6e;
 }
 
 .booking-form>form .row.no-margin {
@@ -72,6 +81,7 @@
   position: relative;
   padding: 25px;
   margin-bottom: 0px;
+
 }
 
 .booking-form .form-group:after {
@@ -135,12 +145,10 @@
 
 .booking-form .btn-flat {
  color: white;
-  padding: 13px 24px;
+  padding: 10px 10px;
   border-radius: 10px;
   background: #ff2e6e;
   transition: background 0.3s ease;
-  margin-top: 40px;
-  margin-left: 15px;
 }
 body {
   font-family: "Poppins";
