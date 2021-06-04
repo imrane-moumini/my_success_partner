@@ -1,3 +1,20 @@
+  <button type='button' class='btn btn-flat' data-toggle='modal'>
+    <%= link_to 'Retourner aux services', services_path, class: 'btn btn-flat'  %>
+  </button>
+
+
+<div class ="container">
+
+  <div class="service_info">
+
+    <% if @service.photo.attached? %>
+      <%= cl_image_tag @service.photo.key, height: 300, width: 1000, crop: :fill %>
+      <% end%>
+
+    <div class="avatar_and_heading">
+      <div class="avatar_heading">
+        <%=  cl_image_tag( @service.user.photo.key, alt: "avatar",:class => "avatar-bordered") %>
+      </div>
 
    <!-- <button type='button' class='btn btn-flat' data-toggle='modal'>-->
     <%= link_to 'Retourner aux services', services_path, id: 'btn-return_service'  %>
@@ -6,10 +23,14 @@
 <div id ="container">
   <div class="barre_de_gauche">
     <div class="avatar_and_heading">
+
       <h1><%= @service.name %></h1>
     </div>
 
     <div class="rating">
+
+      <h3><%= @service.user.name %></h3>
+
       <div class="stars">
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
@@ -22,36 +43,33 @@
      <% if @service.photo.attached? %>
       <%= cl_image_tag @service.photo.key, height: 300, width: 500, crop: :fill %>
       <% end%>
-    <br>
-    <br>
 
+    <br>
+    <br>
+    <br>
     <div>
       <p> <%= @service.description %></p>
     </div>
-  </div>
+     <br>
+    <br>
+    <br>
+    <br>
+  <div>
 
-  <div class="barre_de_droite">
+  <div class="right_bar">
+
     <div class="booking">
-      <h2><%= @service.price %>€</h2>
+
       <div class="center-element">
-       <%=  render 'bookings/new' %>
-      </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="user_description">
-      <div class="avatar_heading">
-         <h3><%= @service.user.name %></h3>
-        <%=  cl_image_tag( @service.user.photo.key, alt: "avatar",:class => "avatar-bordered") %>
-      </div>
-      <div class= "user_description_small">
-          <p>"<%= @service.user_description %>"</p>
-        </div>
-    </div>
-  </div>
+        <button type='button' class='btn btn-flat' data-toggle='modal'>
+        <%= link_to 'Je réserve', new_service_booking_path(@service), class: 'btn btn-flat'  %>
+        </button>
+      <div>
 
+    </div>
 
-</div>
+    <div class="buyer info">
+    </div>
+
+  <div>
 

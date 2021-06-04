@@ -1,61 +1,95 @@
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.digischool.fr/images/article/comment-bien-reussir-ses-examens--lg-3927.jpg)">
-  Mon profil
-</div>
-
-<div class="container mb-5">
-  <div class="d-flex justify-content-between my-4">
-    <div>
-      <button type="button" class="btn btn-flat" data-toggle="modal">
-        <%= link_to 'Ajouter une prestation', new_service_path, class: 'btn btn-flat' %>
-      </button>
-    </div>
+<div class="container0">
+<div class="d-flex align-items-start my-5 col-12">
+  <div class="nav nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Mes services</button>
+    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Mes réservations</button>
+    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Mes informations personnelles</button>
   </div>
-  <div class="row my-2">
-    <% @services.each do |service| %>
-      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
-        <div class="bg-white rounded shadow h-100">
-          <img src="https://www.francetvinfo.fr/image/75wj5xfs2-97ce/580/326/23486965.jpg" alt="" class= 'card-img rounded-top'>
-          <div class="p-3 rounded-bottom d-flex flex-column">
-            <strong><%= service.name %> <span class="text-muted font-weight-normal">• <%= service.user.name %> <i class="fas fa-star star-yellow"></i></span></strong>
-            <small class="text-muted"><%= service.price %></small>
-            <div class="d-flex align-items-end justify-content-between pt-4">
-              <small class="text-right flex-shrink-0"><%= link_to 'Voir plus', service_path(service.id)%></small>
-              <small class="text-right flex-shrink-0"><%= link_to 'Modifier', edit_service_path(service.id)%></small>
-              <small class="text-right flex-shrink-0"><%= link_to 'Supprimer', service_path(service.id), method: :delete, data: { confirm: "Are you sure you want to remove #{service.name} from your service"}, class: 'text-danger' %></small>
+  <div class="tab-content col-8" id="v-pills-tabContent">
+    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+      <div class="d-flex flex-wrap justify-content-between">
+        <% @services.each do |service| %>
+          <div class="card-link-service">
+            <%= link_to service_path(service.id), class: "w-100" do %>
+              <div class="w-100 mb-4" data-aos="zoom-in">
+                <div class="bg-white rounded shadow h-70">
+                  <div class= "card-img rounded-top" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("<%= cl_image_path service.photo.key %>")'></div>
+                  <div class=" card-infos rounded-bottom d-flex flex-column">
+                    <h2><%= service.name.first(60) %><%= "..." if service.name.length > 60 %></h2>
+                    <br class="text-muted font-weight-normal"><p> Créer par <span><%= service.user.name %></span> • <i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i></p>
+                    <small class=" card-trip-pricing text-muted"><%= service.price %> € </small>
+                  </div>
+                </div>
+              </div>
+            <% end  %>
+            <div class="d-flex flex-column justify-content-between pt-4 action-buttons-card">
+              <small class="text-right flex-shrink-0">
+                <%= link_to service_path(service.id), method: :delete, data: { confirm: "Are you sure you want to remove #{service.name} from your service"}, class: 'text-danger'  do%>
+                  <i class="fas fa-trash-alt"></i>
+                  <% end  %>
+                </small>
+                <small class="text-right flex-shrink-0">
+                  <%= link_to edit_service_path(service.id) do%>
+                    <i class="fas fa-pen"></i>
+                  <% end  %>
+                </small>
             </div>
           </div>
+        <% end %>
+      </div>
+      <div class="d-flex justify-content-between my-4">
+        <div>
+          <button type="button" class="btn btn-flat" data-toggle="modal">
+            <%= link_to 'Ajouter un service', new_service_path, class: 'btn btn-flat' %>
+          </button>
         </div>
       </div>
-    <% end %>
-  </div>
-</div>
-
-
-<div class="container mb-5">
-  <div class="d-flex justify-content-between my-4">
-    <div>
-      <button type="button" class="btn btn-flat" data-toggle="modal">
-        <%= link_to 'Ajouter une réservation', root_path, class: 'btn btn-flat' %>
-      </button>
     </div>
-  </div>
-  <div class="row my-2">
-    <% @bookings.each do |booking| %>
-      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
-        <div class="bg-white rounded shadow h-100">
-          <img src="https://www.francetvinfo.fr/image/75wj5xfs2-97ce/580/326/23486965.jpg" alt="" class= 'card-img rounded-top'>
-          <div class="p-3 rounded-bottom d-flex flex-column">
-            <strong><%= booking.service.name %> <span class="text-muted font-weight-normal">• <%= booking.service.user.name %> <i class="fas fa-star star-yellow"></i></span></strong>
-            <small class="text-muted"><%= booking.service.price %></small>
-            <div class="d-flex align-items-end justify-content-between pt-4">
-              <small class="text-right flex-shrink-0"><%= link_to 'Voir plus', service_path(booking.service.id)%></small>
-              <small class="text-right flex-shrink-0"><%= link_to 'Modifier', edit_service_booking_path(booking.id, service_id: booking.service.id)%></small>
-              <small class="text-right flex-shrink-0"><%= link_to 'Supprimer', booking_path(booking.id), method: :delete, data: { confirm: "Are you sure you want to remove #{booking.service.name} from your service"}, class: 'text-danger' %></small>
+    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+      <div class="d-flex flex-wrap justify-content-between">
+        <% @bookings.each do |booking| %>
+          <div class="card-link-service">
+            <%= link_to service_path(service.id), class: "w-100" do %>
+              <div class="w-100 mb-4 mt-5" data-aos="zoom-in">
+                <div class="bg-white rounded shadow h-70">
+                  <div class= "card-img rounded-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( '<% cl_image_tag service.photo.key %>')"></div>
+                  <div class=" card-infos rounded-bottom d-flex flex-column">
+                    <h2><%= booking.service.name %></h2>
+                    <br class="text-muted font-weight-normal"><p> Créer par <span><%= booking.service.user.name %></span> • <i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i></p>
+                    <small class=" card-trip-pricing text-muted"><%= service.price %> € </small>
+                  </div>
+                </div>
+              </div>
+            <% end  %>
+            <div class="d-flex flex-column justify-content-between pt-4 action-buttons-card">
+              <small class="text-right flex-shrink-0">
+                <%= link_to booking_path(booking.id), method: :delete, data: { confirm: "Are you sure you want to remove #{booking.service.name} from your service"}, class: 'text-danger'  do%>
+                  <i class="fas fa-trash-alt"></i>
+                  <% end  %>
+                </small>
+                <small class="text-right flex-shrink-0">
+                  <%= link_to edit_service_booking_path(booking.id, service_id: booking.service.id) do%>
+                    <i class="fas fa-pen"></i>
+                  <% end  %>
+                </small>
             </div>
           </div>
+        <% end %>
+      </div>
+      <div class="d-flex justify-content-between my-4">
+        <div>
+          <button type="button" class="btn btn-flat" data-toggle="modal">
+            <%= link_to 'Réserver une prestation', root_path, class: 'btn btn-flat' %>
+          </button>
         </div>
       </div>
-    <% end %>
+    </div>
+    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+    </div>
   </div>
 </div>
+</div>
+
+
+
 

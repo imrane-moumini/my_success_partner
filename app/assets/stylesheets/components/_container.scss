@@ -1,7 +1,20 @@
-#container {
-  display:flex;
-  padding:20px;
-  justify-content:start;
+
+
+
+.container {
+ display:flex;
+}
+.service_info {
+  flex-grow:1;
+}
+
+
+
+.containerM {
+  margin-top: 20px;
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
 }
 
 .avatar_and_heading {
@@ -21,6 +34,7 @@
   display:flex;
   justify-content: center;
 }
+
 
 .barre_de_droite{
 
