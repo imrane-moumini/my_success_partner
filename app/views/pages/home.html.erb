@@ -12,13 +12,13 @@
         <div class="row ">
           <div class="booking-form">
             <%= form_tag services_path, method: :get do %>
-              <%= text_field_tag :query,params[:query],
+              <%= text_field_tag :query, params[:query],
               class: "form-group",
               placeholder: "Ma ville" %>
-               <%= text_field_tag :query2,params[:query2],
+               <%= text_field_tag :query2, params[:query2],
               class: "form-group",
               placeholder: "Examen" %>
-               <%= date_field_tag :query3,params[:query3],
+               <%= date_field_tag :query3, params[:query3],
               class: "form-group",
               placeholder: "Date" %>
               <%= submit_tag "Rechercher", class: "btn btn-flat" %>

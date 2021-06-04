@@ -1,8 +1,7 @@
 
-
-
-.container {
+.container_i {
  display:flex;
+ margin-top: 40px;
 }
 .service_info {
   flex-grow:1;
@@ -49,6 +48,7 @@
   background-color: white;
   padding: 20px;
   margin-right:30px;
+  margin-left: 30px;
 }
 
 .booking{
