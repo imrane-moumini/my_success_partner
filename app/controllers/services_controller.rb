@@ -47,6 +47,6 @@ class ServicesController < ApplicationController
 
 private
   def service_params
-    params.require(:service).permit(:name, :price, :address, :description, :photo)
+    params.require(:service).permit(:name, :price, :address, :description, :photo, :user_description)
   end
 end
