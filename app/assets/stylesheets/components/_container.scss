@@ -1,3 +1,15 @@
+
+
+
+.container {
+ display:flex;
+}
+.service_info {
+  flex-grow:1;
+}
+
+
+
 .containerM {
   margin-top: 20px;
   width: 1000px;

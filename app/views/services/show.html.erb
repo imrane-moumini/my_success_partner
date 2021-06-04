@@ -1,9 +1,9 @@
 
    <!-- <button type='button' class='btn btn-flat' data-toggle='modal'>-->
-    <%= link_to 'Retourner aux services', services_path, class: 'btn btn-flat'  %>
+    <%= link_to 'Retourner aux services', services_path, id: 'btn-return_service'  %>
     <!--</button>-->
 
-<div id ="container">
+<div class ="container">
   <div class="barre_de_gauche">
     <div class="avatar_and_heading">
       <h1><%= @service.name %></h1>
@@ -20,7 +20,7 @@
     <br>
     <br>
      <% if @service.photo.attached? %>
-      <%= cl_image_tag @service.photo.key, height: 300, width: 1000, crop: :fill %>
+      <%= cl_image_tag @service.photo.key, height: 300, width: 500, crop: :fill %>
       <% end%>
     <br>
     <br>
@@ -54,4 +54,3 @@
 
 
 </div>
-

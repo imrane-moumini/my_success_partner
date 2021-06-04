@@ -32,6 +32,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import { initFlatpickr } from "../plugins/flatpickr";
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 
 
@@ -44,6 +45,19 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   // initSelect2();
   initFlatpickr()
+
+  initSweetalert('#sweet-alert', {
+  title: "A toi le succès !",
+  text: "Ta réservation a bien été prise en compte, nous t'enverrons par mail la réponse de ton success partner",
+  icon: "success"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#send');
+    link.click();
+  }
+});
+
   AOS.init();
+
 });
 
