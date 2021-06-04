@@ -1,7 +1,8 @@
-#container {
-  display:flex;
-  margin:0;
-  padding:20px;
+.containerM {
+  margin-top: 20px;
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
 }
 
 .avatar_and_heading {
@@ -21,6 +22,7 @@
   display:flex;
   justify-content: center;
 }
+
 
 .barre_de_droite{
 
