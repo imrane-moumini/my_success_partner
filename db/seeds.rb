@@ -16,6 +16,9 @@ User.destroy_all
 puts "begin"
 
 user1 = User.create!(name: "Alizée", email: "alizeemelanie@gmail.com", password: "password")
+file = URI.open("https://img.freepik.com/photos-gratuite/jeune-belle-femme-pull-chaud-rose-aspect-naturel-souriant-portrait-isole-cheveux-longs_285396-896.jpg?size=626&ext=jpg")
+user1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+user1.save
 
 
 service = Service.create!(user_id: user1.id, name: "Je vais vous aider a résoudre vos problèmes de mathématique et de physique", price: 30, address: "12 rue Paradis, 13006 Marseille", description: "Bonjour
@@ -75,7 +78,7 @@ file = URI.open("https://file1.science-et-vie.com/var/scienceetvie/storage/image
 service.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 service.save
 
-service = Service.create!(user_id: user1.id, name: "Je vais vous aider en physique et en mathématiques", price: 50, address: "50 avenue du Prado 13006 Marseille", description: "Que vous soyez collégiens ou lycéens, ce service est fait pour vous.
+service = Service.create!(user_id: user1.id, name: "Je vais vous aider en physique et en mathématiques", price: 50, address: "38 rue de Varenne, 75007 Paris", description: "Que vous soyez collégiens ou lycéens, ce service est fait pour vous.
 
 Lorsque j'étais à votre place, il m'arrivait souvent de passer beaucoup de temps sur des exercices ou des problèmes sans vraiment y voir le bout. Et il arrive aussi souvent que les enseignants donnent beaucoup d'informations mais peu de méthode.
 
@@ -100,7 +103,7 @@ file = URI.open("https://www.francetvinfo.fr/image/759r5hfrq-7213/580/326/105071
 service.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 service.save
 
-service = Service.create!(user_id: user1.id, name: "Je vais vous aider à corriger et préparer vos devoirs de mathématiques", price: 40, address: "42 rue des Petites-Mairies, 13001 Marseille", description: "Vous êtes un lycéen, un étudiant ou un enseignant.
+service = Service.create!(user_id: user1.id, name: "Je vais vous aider à corriger et préparer vos devoirs de mathématiques", price: 40, address: "16 rue du Dragon 75006 Paris", description: "Vous êtes un lycéen, un étudiant ou un enseignant.
 
 Vous avez une composition à préparer ? Vous êtes surchargé à cause de vos exercices ? Ou vous voulez préparer un sujet pour vos élèves ?
 
@@ -129,7 +132,7 @@ file = URI.open("https://www.rts.ch/2020/08/11/16/11/9081328.image?w=1920&h=598"
 service.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 service.save
 
-service = Service.create!(user_id: user1.id, name: "Je vais vous donner un cours de mathématique ou physique/chimie", price: 60, address: "62 Boulevard Des Dames, 13002 Marseille", description: "Je vous propose un cours / soutien scolaire de niveau college à bac. Ce cours sera d'une durée de 5min pour le tarif de base et s'effectura via skype. Nous pouvons bien évidemment allonger la durée du cours en ajoutant des options (Cf onglet options)
+service = Service.create!(user_id: user1.id, name: "Je vais vous donner un cours de mathématique ou physique/chimie", price: 60, address: "14 rue de Castellane 75008 Paris", description: "Je vous propose un cours / soutien scolaire de niveau college à bac. Ce cours sera d'une durée de 5min pour le tarif de base et s'effectura via skype. Nous pouvons bien évidemment allonger la durée du cours en ajoutant des options (Cf onglet options)
 
 Jeune ingénieur diplomé de l'école Centrale, j'ai un excellent niveau en mathématiques, physique et chimie et je donne de bons conseils pour réussir des examens, des contrôles, des concours, le brevet ou le baccalauréat. Je donne des cours particuliers depuis maintenant 3 ans.", user_description: "Jeune ingénieur fraîchement diplômé de l'école CENTRALE de Marseille, je donne des cours particuliers de soutien scolaire depuis 4 ans.")
 
@@ -137,7 +140,7 @@ file = URI.open("https://static.lpnt.fr/images/2021/03/14/21418469lpw-21421708-a
 service.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 service.save
 
-service = Service.create!(user_id: user1.id, name: "Originally from London!", price: 30, address: "145 cours Lieutaud, 13006 Marseille", description: "Après avoir obtenu des postes dans l’évènementiel international grâce auxquels j’ai pu utiliser les langues étrangères dans un contexte professionnel, ma passion pour l’Anglais et mon désir d’indépendance m’ont poussé à me lancer en tant que Professeur. Il s’agit aujourd’hui de mon activité principale, que j’exerce en présentiel avec mes élèves de collège/lycée et en distanciel avec les jeunes adultes dont j’ai le tutorat.
+service = Service.create!(user_id: user1.id, name: "Originally from London!, for TOEIC exam", price: 30, address: "145 cours Lieutaud, 13006 Marseille", description: "Après avoir obtenu des postes dans l’évènementiel international grâce auxquels j’ai pu utiliser les langues étrangères dans un contexte professionnel, ma passion pour l’Anglais et mon désir d’indépendance m’ont poussé à me lancer en tant que Professeur. Il s’agit aujourd’hui de mon activité principale, que j’exerce en présentiel avec mes élèves de collège/lycée et en distanciel avec les jeunes adultes dont j’ai le tutorat.
 Je propose des cours particuliers/stages intensifs en Anglais, dont le contenu pédagogique (leçons, exercices) a été élaboré par mes soins, pour m’adapter aux besoins de mes étudiants.
 Mes cours auront pour vocation de vous aider à :
 - réviser les bases de l’Anglais
@@ -156,7 +159,7 @@ service.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 service.save
 
 
-service = Service.create!(user_id: user1.id, name: "Fluid in English", price: 25, address: "15 rue Marengo 13006 Marseille", description: "je suis un jeune gabonais, dynamique vivant au Ghana depuis 2014. j’ai une licence en anglais et j’ai également un diplôme de proféciency. je parle courament avec un accent britanique et je suis professeur d’anglais depuis plus de trois ans dans une école de langue (Green u college ghana).
+service = Service.create!(user_id: user1.id, name: "Fluid in English, easy for Toeic", price: 25, address: "15 rue Marengo 13006 Marseille", description: "je suis un jeune gabonais, dynamique vivant au Ghana depuis 2014. j’ai une licence en anglais et j’ai également un diplôme de proféciency. je parle courament avec un accent britanique et je suis professeur d’anglais depuis plus de trois ans dans une école de langue (Green u college ghana).
 je propose des cours d’anglais simple à comprendre sur zoom ou Skype pour toute personne qui désire améliorer son niveau d’anglais.
 les cours seront assez facile à comprendre car ils seront basés sur les règles de grammaire, la prononciation et le vocabulaire.
 au travers de ces cours, les étudiants apprendront l’usage des principaux temps de l’indicatif, la phonétique anglaise, les mots et les phrases indispensable à la communication.", user_description: "Bonjour, je suis Gaël Tchikaya, professeur d’anglais et traducteur depuis plus de 3 ans.")
@@ -165,7 +168,7 @@ file = URI.open("https://englishlive.ef.com/fr-fr/blog/wp-content/uploads/sites/
 service.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 service.save
 
-service = Service.create!(user_id: user1.id, name: "Lemme help you", price: 20, address: "120 rue Berlioz 13006 Marseille", description: "De nombreuses études montrent que la répétition espacée permet une extrêmement bonne mémorisation.
+service = Service.create!(user_id: user1.id, name: "Lemme help you for your TOEIC exam", price: 20, address: "120 rue Berlioz 13006 Marseille", description: "De nombreuses études montrent que la répétition espacée permet une extrêmement bonne mémorisation.
 J’ai utilisé des ‘flash cards’ pendant la majeure partie de ma scolarité et je m’en suis excellemment bien sorti (en langues) !
 C’est quoi une ‘flash card’ ?
 C’est simple : une ‘flash card’ = un mot (ou phrase) sur le recto et un autre sur le verso.
@@ -180,7 +183,7 @@ file = URI.open("https://www.pole-emploi.fr/files/live/sites/PE/files/pole-emplo
 service.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 service.save
 
-service = Service.create!(user_id: user1.id, name: "Smarter than your last date", price: 40, address: "12 rue Breteuil, 13006 Marseille", description: "Imagine pouvoir voyager dans un autre pays et demander ton chemin facilement en arrivant. Imagine-toi dans un bar à t’amuser avec des inconnus que tu viens de rencontrer et qui resteront tes amis pour longtemps. Imagine tout ça en anglais !
+service = Service.create!(user_id: user1.id, name: "Smarter than your last date", price: 40, address: "16 rue du Bac 75007 Paris", description: "Imagine pouvoir voyager dans un autre pays et demander ton chemin facilement en arrivant. Imagine-toi dans un bar à t’amuser avec des inconnus que tu viens de rencontrer et qui resteront tes amis pour longtemps. Imagine tout ça en anglais !
 **Ne te limite plus aux relations franco-françaises et découvres enfin le monde sans l’angoisse de ne pas réussir à communiquer.**
 ### Pour 5€ je t’envoie un fichier Excel avec les 1000 mots les plus utilisés en Anglais et leur traduction en Français.
 Tu vas pouvoir les apprendre à ton rythme et les consulter de n’importe où via ton téléphone, ton ordinateur ou même les imprimer et les accrocher sur ton frigo ! (Ou encore les poser à côté de tes toilettes, ça ne me regarde pas, tant que tu les apprends) :rouleau_papier:
@@ -194,7 +197,7 @@ file = URI.open("https://esic-online.com/wp-content/uploads/2021/01/Logo-Ebook-C
 service.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 service.save
 
-service = Service.create!(user_id: user1.id, name: "Fan de James Bond, gage de qualité", price: 60, address: "51 rue Saint-Ferréol 13001 Marseille", description: "Je m’appelle Gael Tchikaya Tchikaya, je suis professeur d’anglais depuis plus de trois ans et je vis au Ghana depuis 2014. J’ai une licence en anglais et j’enseigne à Green U College Ghana, qui est une école de langue basée à Accra.
+service = Service.create!(user_id: user1.id, name: "Fan de James Bond, gage de qualité", price: 60, address: "72 rue Lauriston 75016 Paris", description: "Je m’appelle Gael Tchikaya Tchikaya, je suis professeur d’anglais depuis plus de trois ans et je vis au Ghana depuis 2014. J’ai une licence en anglais et j’enseigne à Green U College Ghana, qui est une école de langue basée à Accra.
 J’enseigne les débutants ainsi que ceux qui s’expriment déjà et qui désirent améliorer leurs niveaux d’anglais. J’aide également les étudiants à préparer le TOEFL et je propose aussi des cours d’anglais professionnels aux travailleurs.
 Les cours seront sur la grammaire, la conjugaison, le vocabulaire, la prononciation et l’oral.
 La grammaire et la conjugaison seront sur l’apprentissage des temps et des règles grammaticales.
@@ -213,7 +216,7 @@ file = URI.open("https://cursus.edu/storage/thumbnails/64840a97ec29eab30d209808f
 service.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 service.save
 
-service = Service.create!(user_id: user1.id, name: "Exam beast", price: 80, address: "17 rue Saint-Ferréol 13001 Marseille", description: "Détentrice d’une licence d’anglais, j’ai passé une année en tant qu’assistante de français en Angleterre, où j’ai vécu en totale immersion. Je donne des cours particuliers depuis plusieurs années et suis donc habituée à adapter mon approche à tous les niveaux.
+service = Service.create!(user_id: user1.id, name: "TOEIC Exam beast", price: 80, address: "48 rue de Prony 75017 Paris", description: "Détentrice d’une licence d’anglais, j’ai passé une année en tant qu’assistante de français en Angleterre, où j’ai vécu en totale immersion. Je donne des cours particuliers depuis plusieurs années et suis donc habituée à adapter mon approche à tous les niveaux.
 Je propose de vous aider à progresser en anglais pour maîtriser la langue de Shakespeare à partir de seulement 5 € !
 Difficulté en grammaire, ou simple envie d’écrire à votre correspondant ? Je réponds à vos besoins quels qu’ils soient à l’aide d’exercices personnalisés.
 Pour 5 €, je vous enverrai entre les exercices nécessaires, dont le nombre variera selon la difficulté abordée et votre niveau. Pour un travail approfondi, merci de regarder les options ci-dessous.
