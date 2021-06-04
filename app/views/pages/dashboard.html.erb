@@ -16,7 +16,9 @@
         <div class="bg-white rounded shadow h-100">
           <%= cl_image_tag service.photo.key,  class: 'card-img rounded-top' %>
           <div class="p-3 rounded-bottom d-flex flex-column">
-            <strong><%= service.name %> <span class="text-muted font-weight-normal">• <%= service.user.name %> <i class="fas fa-star star-yellow"></i></span></strong>
+            <strong><%= service.name %> <span class="text-muted font-weight-normal">
+            <br>
+              <%= service.user.name %> <i class="fas fa-star star-yellow"></i></span></strong>
             <small class="text-muted"><%= service.price %></small>
             <div class="d-flex align-items-end justify-content-between pt-4">
               <small class="text-right flex-shrink-0"><%= link_to 'Voir plus', service_path(service.id)%></small>
