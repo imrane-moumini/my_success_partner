@@ -49,14 +49,14 @@
       <div class="d-flex flex-wrap justify-content-between">
         <% @bookings.each do |booking| %>
           <div class="card-link-service">
-            <%= link_to service_path(service.id), class: "w-100" do %>
+            <%= link_to service_path(booking.service), class: "w-100" do %>
               <div class="w-100 mb-4 mt-5" data-aos="zoom-in">
                 <div class="bg-white rounded shadow h-70">
-                  <div class= "card-img rounded-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( '<% cl_image_tag service.photo.key %>')"></div>
+                  <div class= "card-img rounded-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( '<% cl_image_tag booking.service.photo.key %>')"></div>
                   <div class=" card-infos rounded-bottom d-flex flex-column">
                     <h2><%= booking.service.name %></h2>
                     <br class="text-muted font-weight-normal"><p> Créer par <span><%= booking.service.user.name %></span> • <i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i><i class="fas fa-star star-yellow"></i></p>
-                    <small class=" card-trip-pricing text-muted"><%= service.price %> € </small>
+                    <small class=" card-trip-pricing text-muted"><%= booking.service.price %> € </small>
                   </div>
                 </div>
               </div>

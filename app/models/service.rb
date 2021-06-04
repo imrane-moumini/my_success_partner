@@ -10,12 +10,12 @@ class Service < ApplicationRecord
   validates :description, presence: true, length: { minimum: 100 }
   include PgSearch::Model
   pg_search_scope :search_by_address,
-    against: [ :address ],
+    against: [:address],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
   pg_search_scope :search_by_name,
-    against: [ :name ],
+    against: [:name],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
