@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2021_06_03_135855) do
-
+ActiveRecord::Schema.define(version: 2021_06_03_201341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +51,28 @@ ActiveRecord::Schema.define(version: 2021_06_03_135855) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "directors", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "examen", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.string "title"
+    t.integer "year"
+    t.text "synopsis"
+    t.bigint "director_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["director_id"], name: "index_movies_on_director_id"
+  end
+
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -63,6 +83,14 @@ ActiveRecord::Schema.define(version: 2021_06_03_135855) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "user_description"
     t.index ["user_id"], name: "index_services_on_user_id"
+  end
+
+  create_table "tv_shows", force: :cascade do |t|
+    t.string "title"
+    t.integer "year"
+    t.text "synopsis"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -78,8 +106,15 @@ ActiveRecord::Schema.define(version: 2021_06_03_135855) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "villes", force: :cascade do |t|
+    t.string "nom"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "services"
   add_foreign_key "bookings", "users"
+  add_foreign_key "movies", "directors"
   add_foreign_key "services", "users"
 end
