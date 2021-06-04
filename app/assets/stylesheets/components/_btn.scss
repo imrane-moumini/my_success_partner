@@ -1,12 +1,24 @@
 .btn-flat {
   color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: #FF0063;
+    display: inline-block;
+    transition: background 0.3s ease;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.btn-flat:hover {
+  background: #FF0063;
+  color: white;
+}
+
+#btn-return_service{
+    color: white;
   padding: 8px 24px;
   border-radius: 4px;
   background: #FF0063;
   transition: background 0.3s ease;
-}
-
-.btn-flat:hover {
-  background: black;
-  color: white;
 }

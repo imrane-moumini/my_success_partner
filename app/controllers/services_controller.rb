@@ -5,6 +5,15 @@ class ServicesController < ApplicationController
       @services = Service.search_by_address(params[:query]).search_by_name(params[:query2])
     else
      @services = Service.all
+
+    @services = Service.all
+      @markers = @services.geocoded.map do |service|
+      {
+        lat: service.latitude,
+        lng: service.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { service: service }),
+        image_url: "https://freepikpsd.com/media/2019/10/map-point-png-5-Transparent-Images.png"
+      }
     end
   end
 
@@ -21,7 +30,7 @@ class ServicesController < ApplicationController
     @service = Service.new(service_params)
     @service.user = current_user
 
-    if @service.save!
+    if @service.save
       redirect_to service_path(@service)
     else
       render :new
@@ -51,6 +60,6 @@ class ServicesController < ApplicationController
 
 private
   def service_params
-    params.require(:service).permit(:name, :price, :address, :description, :photo)
+    params.require(:service).permit(:name, :price, :address, :description, :photo, :user_description)
   end
 end

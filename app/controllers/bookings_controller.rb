@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
       if @booking.save
         redirect_to dashboard_path(@dashboard)
       else
-        render :new
+        render 'services/show'
       end
   end
 #GET    /services/:service_id/bookings/:id/edit
